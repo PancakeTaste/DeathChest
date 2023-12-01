@@ -1,6 +1,6 @@
 package me.pancaketaste.deathchest;
 
-import me.pancaketaste.deathchest.commands.DeathChestsCommand;
+import me.pancaketaste.deathchest.commands.DeathCTPCommand;
 import me.pancaketaste.deathchest.listeners.PlayerDeath;
 import me.pancaketaste.deathchest.listeners.PlayerInteract;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -14,7 +14,7 @@ public final class DeathChest extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new PlayerInteract(), this);
 
         // Commands
-        getCommand("deathchests").setExecutor(new DeathChestsCommand());
+        getCommand("deathctp").setExecutor(new DeathCTPCommand()); // Teleport to death chest
     }
 
 }

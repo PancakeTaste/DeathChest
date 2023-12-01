@@ -24,4 +24,13 @@ public class ChestManager {
         chestMap.remove(chest);
     }
 
+    public static Chest getPlayerDeathChest(Player player) {
+        for (Chest chest : chestMap.keySet()) {
+            ChestData chestData = chestMap.get(chest);
+            if (chestData.getPlayer().equals(player)) {
+                return chest;
+            }
+        }
+        return null; // Return null if no death chest is found for the player
+    }
 }

@@ -3,5 +3,7 @@ version: '1.0-SNAPSHOT'
 main: me.pancaketaste.deathchest.DeathChest
 api-version: '1.17'
 commands:
-  deathchests:
-    description: See your active death chests.
+  deathctp:
+    description: Teleport to death chest.
+    permissions:
+      deathc.tp
