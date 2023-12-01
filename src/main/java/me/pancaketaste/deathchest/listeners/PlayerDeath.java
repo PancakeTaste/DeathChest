@@ -37,7 +37,7 @@ public class PlayerDeath implements Listener {
         ArmorStand hologram = (ArmorStand) player.getWorld().spawnEntity(chestLocation, EntityType.ARMOR_STAND);
         hologram.setVisible(false);
         hologram.setCustomNameVisible(true);
-        hologram.setCustomName(MessagesConfig.get().getString("hologram"));
+        hologram.setCustomName(MessagesConfig.get().getString("hologram-title"));
         hologram.setGravity(false);
 
         // Clear drops

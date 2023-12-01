@@ -15,6 +15,7 @@ public class DeathCTPCommand implements CommandExecutor {
             Player player = (Player) sender;
             Chest deathChest = ChestManager.getPlayerDeathChest(player);
 
+            // Check if the player has a death chest
             if (deathChest != null) {
                 player.teleport(deathChest.getLocation().add(0.5, 0, 0.5));
                 player.sendMessage(MessagesConfig.get().getString("tp"));

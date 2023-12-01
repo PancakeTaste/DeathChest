@@ -1,3 +1,4 @@
 me\pancaketaste\deathchest\commands\DeathCTPCommand.class
+me\pancaketaste\deathchest\Database.class
 me\pancaketaste\deathchest\files\MessagesConfig.class
 me\pancaketaste\deathchest\listeners\PlayerInteract.class

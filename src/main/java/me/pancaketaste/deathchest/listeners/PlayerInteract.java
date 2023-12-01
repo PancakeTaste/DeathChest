@@ -30,7 +30,7 @@ public class PlayerInteract implements Listener {
         if (chestData != null) {
             // Check if the player who interacts is the owner
             if (chestData.getPlayer() != player) {
-                player.sendMessage(MessagesConfig.get().getString("not-owner"));
+                player.sendMessage(MessagesConfig.get().getString("chest-unowned"));
                 e.setCancelled(true);
             } else {
                 // Drop all items
@@ -46,7 +46,7 @@ public class PlayerInteract implements Listener {
                 ChestManager.removeChest(chest);
                 clickedBlock.setType(Material.AIR);
 
-                player.sendMessage(MessagesConfig.get().getString("open"));
+                player.sendMessage(MessagesConfig.get().getString("chest-open"));
             }
         }
     }
