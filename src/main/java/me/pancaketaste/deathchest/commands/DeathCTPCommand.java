@@ -20,7 +20,7 @@ public class DeathCTPCommand implements CommandExecutor {
                 player.teleport(deathChest.getLocation().add(0.5, 0, 0.5));
                 player.sendMessage(MessagesConfig.get().getString("tp"));
             } else {
-                player.sendMessage(MessagesConfig.get().getString("to-no-chest"));
+                player.sendMessage(MessagesConfig.get().getString("tp-no-chest"));
             }
             return true;
         } else {
