@@ -24,7 +24,3 @@ Customize the plugin according to your server's needs by editing the messages in
 Check out the plugin in action in this short video:
 
 [![Watch the DeathChest Plugin in Action](https://img.youtube.com/vi/VThV7WZ8rD8/0.jpg)](https://www.youtube.com/watch?v=VThV7WZ8rD8)
-
-## Contributing
-
-If you have suggestions, bug reports, or would like to contribute to the development of DeathChest, please feel free to open an issue or submit a pull request.
