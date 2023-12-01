@@ -4,6 +4,10 @@
 
 DeathChest is a Spigot plugin designed to enhance the player experience in Minecraft. When a player meets their demise, a chest automatically spawns at the exact location, containing their items for easy retrieval. Additionally, players with specific permissions can teleport directly to the chest.
 
+## Purpose
+
+This plugin was created as a part of the learning process for Minecraft plugin development. It serves as a practical project to understand the basics of Spigot API and plugin architecture.
+
 ## Features
 
 - **Automatic Chest Generation:** Upon player death, a chest appears at the exact location, ensuring a hassle-free item recovery process.
