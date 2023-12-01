@@ -6,6 +6,7 @@ import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.Chest;
+import org.bukkit.entity.ArmorStand;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -29,7 +30,7 @@ public class PlayerInteract implements Listener {
         if (chestData != null) {
             // Check if the player who interacts is the owner
             if (chestData.getPlayer() != player) {
-                player.sendMessage(ChatColor.RED + "You are not the owner of this chest.");
+                player.sendMessage(ChatColor.RED + "You don't own this chest.");
                 e.setCancelled(true);
             } else {
                 // Drop all items
@@ -40,10 +41,12 @@ public class PlayerInteract implements Listener {
                 }
 
                 // Break the chest
-                ChestManager.remove(chest);
+                ArmorStand hologram = chestData.getHologram();
+                hologram.remove();
+                ChestManager.removeChest(chest);
                 clickedBlock.setType(Material.AIR);
 
-                player.sendMessage(ChatColor.GREEN + "You recovered the items.");
+                player.sendMessage(ChatColor.YELLOW + "§lCongrats! " + ChatColor.RESET + ChatColor.WHITE + "You recovered the items.");
             }
         }
     }

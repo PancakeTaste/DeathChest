@@ -1,9 +1,12 @@
 package me.pancaketaste.deathchest.listeners;
 
 import me.pancaketaste.deathchest.managers.ChestManager;
+import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Chest;
+import org.bukkit.entity.ArmorStand;
+import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -27,11 +30,23 @@ public class PlayerDeath implements Listener {
         location.getBlock().setType(Material.CHEST);
         Chest chest = (Chest) location.getBlock().getState();
 
+        // Center location of the chest
+        Location chestLocation = chest.getLocation().add(0.5, -0.6, 0.5);
+
+        // Create a hologram at the center of the chest
+        ArmorStand hologram = (ArmorStand) player.getWorld().spawnEntity(chestLocation, EntityType.ARMOR_STAND);
+        hologram.setVisible(false);
+        hologram.setCustomNameVisible(true);
+        hologram.setCustomName(ChatColor.YELLOW + "§lDeathChest");
+        hologram.setGravity(false);
+
         // Clear drops
         e.getDrops().clear();
 
         // Store the inventory
-        new ChestManager(chest, player, inventory.getContents());
+        new ChestManager(chest, hologram, player, inventory.getContents());
+
+        player.sendMessage(ChatColor.WHITE + "Upon your death, all your inventory items are now stored in a " + ChatColor.YELLOW + "DeathChest" + ChatColor.WHITE + ". To reclaim them, head back to the same location.");
     }
 
     private boolean isInventoryEmpty(Inventory inventory) {
