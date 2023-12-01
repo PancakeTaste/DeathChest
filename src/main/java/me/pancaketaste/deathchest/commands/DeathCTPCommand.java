@@ -1,8 +1,7 @@
 package me.pancaketaste.deathchest.commands;
 
-import me.pancaketaste.deathchest.managers.ChestData;
+import me.pancaketaste.deathchest.files.MessagesConfig;
 import me.pancaketaste.deathchest.managers.ChestManager;
-import org.bukkit.ChatColor;
 import org.bukkit.block.Chest;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -18,9 +17,9 @@ public class DeathCTPCommand implements CommandExecutor {
 
             if (deathChest != null) {
                 player.teleport(deathChest.getLocation().add(0.5, 0, 0.5));
-                player.sendMessage(ChatColor.GREEN + "Teleported to your death chest!");
+                player.sendMessage(MessagesConfig.get().getString("tp"));
             } else {
-                player.sendMessage(ChatColor.RED + "You don't have a death chest.");
+                player.sendMessage(MessagesConfig.get().getString("to-no-chest"));
             }
             return true;
         } else {

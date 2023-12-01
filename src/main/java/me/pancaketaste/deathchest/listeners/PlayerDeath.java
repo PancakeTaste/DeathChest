@@ -1,7 +1,7 @@
 package me.pancaketaste.deathchest.listeners;
 
+import me.pancaketaste.deathchest.files.MessagesConfig;
 import me.pancaketaste.deathchest.managers.ChestManager;
-import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Chest;
@@ -37,7 +37,7 @@ public class PlayerDeath implements Listener {
         ArmorStand hologram = (ArmorStand) player.getWorld().spawnEntity(chestLocation, EntityType.ARMOR_STAND);
         hologram.setVisible(false);
         hologram.setCustomNameVisible(true);
-        hologram.setCustomName(ChatColor.YELLOW + "§lDeathChest");
+        hologram.setCustomName(MessagesConfig.get().getString("hologram"));
         hologram.setGravity(false);
 
         // Clear drops
@@ -46,7 +46,7 @@ public class PlayerDeath implements Listener {
         // Store the inventory
         new ChestManager(chest, hologram, player, inventory.getContents());
 
-        player.sendMessage(ChatColor.WHITE + "Upon your death, all your inventory items are now stored in a " + ChatColor.YELLOW + "DeathChest" + ChatColor.WHITE + ". To reclaim them, head back to the same location.");
+        player.sendMessage(MessagesConfig.get().getString("death"));
     }
 
     private boolean isInventoryEmpty(Inventory inventory) {
