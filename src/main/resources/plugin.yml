@@ -2,3 +2,6 @@ name: DeathChest
 version: '${project.version}'
 main: me.pancaketaste.deathchest.DeathChest
 api-version: '1.17'
+commands:
+  deathchests:
+    description: See your active death chests.
