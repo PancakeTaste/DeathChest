@@ -1,11 +1,14 @@
 package me.pancaketaste.deathchest.managers;
 
+import org.bukkit.Material;
 import org.bukkit.block.Chest;
 import org.bukkit.entity.ArmorStand;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class ChestManager {
@@ -32,5 +35,34 @@ public class ChestManager {
             }
         }
         return null; // Return null if no death chest is found for the player
+    }
+
+    public static List<Chest> getAllChests() {
+        return new ArrayList<>(chestMap.keySet());
+    }
+
+    public static void destroyAllChests() {
+        for (Chest chest : chestMap.keySet()) {
+            ChestData chestData = chestMap.get(chest);
+
+            // Drop all items
+            for (ItemStack item : chestData.getInventory()) {
+                if (item != null) {
+                    chest.getWorld().dropItemNaturally(chest.getLocation(), item);
+                }
+            }
+
+            // Break the chest
+            ArmorStand hologram = chestData.getHologram();
+            if (hologram != null) {
+                hologram.remove();
+            }
+
+            // Remove chest from the map
+            chestMap.remove(chest);
+
+            // Set the chest block to air
+            chest.getBlock().setType(Material.AIR);
+        }
     }
 }

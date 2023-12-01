@@ -4,6 +4,7 @@ import me.pancaketaste.deathchest.commands.DeathCTPCommand;
 import me.pancaketaste.deathchest.files.MessagesConfig;
 import me.pancaketaste.deathchest.listeners.PlayerDeath;
 import me.pancaketaste.deathchest.listeners.PlayerInteract;
+import me.pancaketaste.deathchest.managers.ChestManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class DeathChest extends JavaPlugin {
@@ -28,6 +29,11 @@ public final class DeathChest extends JavaPlugin {
 
         // Commands
         getCommand("deathctp").setExecutor(new DeathCTPCommand()); // Teleport to death chest
+    }
+
+    @Override
+    public void onDisable() {
+        ChestManager.destroyAllChests();
     }
 
 }
