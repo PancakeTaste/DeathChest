@@ -1,7 +1,0 @@
-me\pancaketaste\deathchest\DeathChest.class
-me\pancaketaste\deathchest\managers\ChestManager.class
-me\pancaketaste\deathchest\commands\DeathCTPCommand.class
-me\pancaketaste\deathchest\files\MessagesConfig.class
-me\pancaketaste\deathchest\listeners\PlayerInteract.class
-me\pancaketaste\deathchest\managers\ChestData.class
-me\pancaketaste\deathchest\listeners\PlayerDeath.class
