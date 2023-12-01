@@ -1,0 +1,4 @@
+name: DeathChest
+version: '${project.version}'
+main: me.pancaketaste.deathchest.DeathChest
+api-version: '1.17'
