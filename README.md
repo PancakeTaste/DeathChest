@@ -17,9 +17,3 @@ This plugin was created as a part of the learning process for Minecraft plugin d
 ## Configuration
 
 Customize the plugin according to your server's needs by editing the messages in the `messages.yml` file.
-
-## Demo
-
-Check out the plugin in action in this short video:
-
-[![Watch the DeathChest Plugin in Action](https://img.youtube.com/vi/VThV7WZ8rD8/0.jpg)](https://www.youtube.com/watch?v=VThV7WZ8rD8)
