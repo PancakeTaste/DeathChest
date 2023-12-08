@@ -1,0 +1,8 @@
+name: DeathChest
+version: '1.0-SNAPSHOT'
+main: me.pancaketaste.deathchest.DeathChest
+api-version: '1.17'
+commands:
+  deathctp:
+    description: Teleport to death chest.
+    permission: deathc.tp
